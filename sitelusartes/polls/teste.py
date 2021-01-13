@@ -1,14 +1,13 @@
 import sqlite3
 
-conn = sqlite3.connect('')
+conn = sqlite3.connect('django.db') #my database
 cursor = conn.cursor()
-nome_tabela = ''
+nome_tabela = 'Produtos' #nome da tabekla
 
 #obtendo informações da tabela
-cursor.execute ('PRAGMA table_info({})' .format(nome_tabela))
+cursor.execute ('PRAGMA table_info({})' .format(nome_produto))
 
-colunas -[tupla [1] for tupla in cursor.fetchall()]
-print('Colunas:', colunas)
+
 
 #listando as tabelas do banco de dados 
 cursor.execute("""SELECT name FROM sqlite_master WHERE type='table' ORDER BY name""")
@@ -18,7 +17,7 @@ for tabela in cursor.fetchall():
     print("%s" % (tabela))
 
 #obtendo o esquema da tabela
-cursor.exeute("""SELECT sql FROM sqlite_master WHERE type='table' AND name=?""", (nome_tabela,))
+cursor.exeute("""SELECT sql FROM sqlite_master WHERE type='table' AND name=?""", (Produtos))
 
 print('Esquema:')
 for esquema in cursor.fetchall():
